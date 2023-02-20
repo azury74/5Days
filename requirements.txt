@@ -1,5 +1,5 @@
 click==8.0.4
-Flask==1.1.2
+Flask==2.2
 flask_login
 flask_sqlalchemy==3.0.3
 kaggle==1.5.12
