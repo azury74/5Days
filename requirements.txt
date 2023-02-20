@@ -1,4 +1,3 @@
-alabaster==0.7.12
 arrow @ file:///opt/conda/conda-bld/arrow_1649166651673/work
 astroid @ file:///C:/Windows/TEMP/abs_b0dtxgpicv/croots/recipe/astroid_1659023126745/work
 atomicwrites==1.4.0
