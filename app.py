@@ -1,5 +1,4 @@
 from flask import Flask,render_template,request, url_for, redirect, render_template,current_app, g,session,flash, send_from_directory,jsonify
-import sqlite3
 import click
 import os 
 from flask_sqlalchemy import SQLAlchemy
@@ -9,48 +8,6 @@ import difflib
 app = Flask(__name__)
 
 
-
-
-
-
-
-#---------------------------------------------------------------------------------------
-#Fonction pour remplir la database (ne doit être appelé qu'une seule fois) :
-def fill_dataset():
-    from kaggle.api.kaggle_api_extended import KaggleApi
-    # Créer une instance de l'API Kaggle
-    api = KaggleApi()
-    api.authenticate()  # Utilisez votre fichier JSON contenant votre clé API pour vous authentifier
-    # Télécharger un jeu de données Kaggle
-    dataset_slug = "doaaalsenani/usa-cers-dataset"  # Remplacez ceci par le slug (identifiant) du jeu de données Kaggle
-    destination_folder = "output"  # Spécifiez le dossier dans lequel vous voulez télécharger le jeu de données
-    api.dataset_download_files(dataset_slug, path=destination_folder, unzip=True)
-    
-    df=pd.read_csv("output/USA_cars_datasets.csv",sep=",")
-    
-    for i in range(1,len(df["price"].values)):
-        car = Car(
-            id = int(df.iloc[:, 0].values[i]),
-            price = int(df["price"].values[i]),
-            brand = df["brand"].values[i], 
-            model = df["model"].values[i],
-            year = int(df["year"].values[i]),
-            title_status = df["title_status"].values[i],
-            mileage = int(df["mileage"].values[i]),
-            color = df["color"].values[i],
-            vin = df["vin"].values[i],# Vehicule identification number    
-            lot = df["lot"].values[i]
-        )
-       
-        db.session.add(car)
-        db.session.commit()
-
-
-
-
-
-
-    
 #---------------------------------------------------------------------------------------
 #Page de l'interface : 
 
