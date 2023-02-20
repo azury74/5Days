@@ -3,8 +3,10 @@
     <head>
         <meta charset="utf-8" />
 
-        <link rel="stylesheet" href="../static/css/style_plateforme.css">   
-        <link rel="icon" type="image/png" sizes="32x32" href="../static/Images/favicon-32x32.png">
+    
+	 <link rel="stylesheet" href="{{ url_for('static', filename='css/style_plateforme.css') }}">   
+	 <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='Images/favicon-32x32.png') }}">
+        
         <title>ALLIN</title>
     </head>
 
@@ -13,7 +15,8 @@
     	<header>
 
     		<div class="header">
-   				<div class="LogoHeader"><img src="../static/Images/logoblanc2.png" alt="Logo" class="Logo"> </div>
+   				
+				<div class="LogoHeader"><img src="{{ url_for('static', filename='Images/logoblanc2.png') }}" alt="Logo" class="Logo"> </div>
                                 <div class="NomHeader"><h1 class="NameHeader">Dataset explorer</h1></div>
             
 
@@ -31,7 +34,7 @@
         
         <main class="PageInfo">
             <div class="Info">
-                <img src="../static/Images/profil.png" alt="Logo" class="LogoProfil1">
+		   <img src="{{ url_for('static', filename='Images/profil.png') }}" alt="Logo" class="LogoProfil1">
                 <div>
                     <h1 class="policeProfil">Bienvenue,</h1>
                  
@@ -52,7 +55,8 @@
              <div class="Divider4"></div>    
                  <div style="display:flex">
                    <p style="color:white;font-family:Futura;width:80%;margin-left:40px">Pour information, Kaggle est une plateforme web organisant des compétitions en science des données appartenant à Google. Sur cette plateforme, les entreprises proposent des problèmes en science des données et offrent un prix aux datalogistes obtenant les meilleures performances. Aujourd’hui sur notre page de recherches, vous pourrez vous renseigner et choisir votre prochain véhicule !</p>
-                  <img src="../static/Images/Kaggle_logo.png" alt="Logo" class="LogoProfil2">
+                  
+			  <img src="{{ url_for('static', filename='Images/Images/Kaggle_logo.png') }}" alt="Logo" class="LogoProfil2">
                 </div>
             
 
@@ -67,7 +71,7 @@
         <footer class="footer5">
                 
     		<div class="footerContenu1">
-   			<div class="LogoFooter"><p><img src="../static/Images/logoblanc2.png"  alt="Logo1" class="logo1"></p></div>
+   			<div class="LogoFooter"><p><img src="{{ url_for('static', filename='Images/logoblanc2.png') }}" alt="Logo1" class="Logo1"> </p></div>
             <div class="MailFooter"><h2 class="TextFooter"><br /> 67 Bd de Brandebourg, 94200 Ivry-sur-Seine<br />01 56 20 62 62<br />Nous contacter :<a href="mailto:directeur@teamsprint.fr">Envoyer un mail</a></h2></div>
 		</div>
 
