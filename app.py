@@ -7,7 +7,7 @@ import pandas as pd
 import difflib
 
 app = Flask(__name__)
-db = SQLAlchemy()
+
 
 
 
