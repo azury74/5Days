@@ -11,35 +11,6 @@ db = SQLAlchemy()
 
 
 
-# create the extension
-app.secret_key = "az900"
-# configure the SQLite database, relative to the app instance folder
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///project.db"
-# initialize the app with the extension
-db.init_app(app)
-
-#---------------------------------------------------------------------------------------
-#Création de la base de donnée :
-class Car(db.Model):
-    id = db.Column(db.Integer,primary_key=True)
-    price = db.Column(db.Integer,nullable=False)
-    brand = db.Column(db.String, nullable=False) 
-    model = db.Column(db.String,nullable=False) 
-    year = db.Column(db.Integer,nullable=False) 
-    title_status = db.Column(db.String,nullable=False) 
-    mileage = db.Column(db.Integer,nullable=False) 
-    color = db.Column(db.String,nullable=False) 
-    vin = db.Column(db.String,nullable=False) # Vehicule identification number    
-    lot = db.Column(db.String,nullable=False) # lot number assigned to a particular quantitity or lot of material from a single
-  
-
-    def __repr__(self):
-        return f'<User {self.id}>'
-    
-    
-with app.app_context():
-    db.create_all()
-    
 
 
 
