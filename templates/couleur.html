@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+
+        <link rel="stylesheet" href="../static/css/style_plateforme.css">   
+        <link rel="icon" type="image/png" sizes="32x32" href="../static/Images/favicon-32x32.png">
+        <title>ALLIN</title>
+    </head>
+<style>
+thead, tfoot {
+     
+  color: white;
+  
+}
+
+thead th, tfoot th, tfoot td {
+  background: rgba(32,31,32,0.87);
+  border:rgba(32,31,32,0.87);
+  
+ 
+  font-size:1.3em;
+  
+  
+}
+td{
+    border-left: none;
+    border-right: none;
+}
+tr
+{
+    background-color: rgba(117,112,117,0.87);
+}input{
+    background-color: red;
+    border-radius: 5px;
+    color:white;
+    
+}
+</style>
+    <body>
+
+    	<header>
+
+    		<div class="header">
+   				<div class="LogoHeader"><img src="../static/Images/logoblanc2.png" alt="Logo" class="Logo"> </div>
+                <div class="NomHeader"><h1 class="NameHeader">Car dataset explorer</h1></div>                            
+           		<div class="HeaderFond"></div>
+			</div>
+        	<div class="NavEmploye">
+                
+                  <a href="{{ url_for('accueil') }}" class="lien">Accueil</a>
+                  <div class="Divider"></div>
+                  <a href="{{ url_for('recherche') }}" id="enCours1" class="lien77">Recherche</a> 
+                     
+            </div>
+    	</header>
+        
+        
+        
+        <main class="PageInfo">
+            <div class="Info">
+                <img src="../static/Images/book.png" alt="Logo" class="LogoProfil3">
+                <div>
+                    <h1 class="policeProfil">Effectuez votre recherche</h1>
+                    <div class="pos" >
+                       
+                       
+                        <div class="navGestion" style="margin-top:20px;">
+                            <a href="{{ url_for('recherche') }}"  class="lien3"   style="font-size:1.3em; ">Tout</a>
+                            <div class="Divider3"></div> 
+                            <a href="{{ url_for('marque') }}"  class="lien3"  style="font-size:1.3em; ">Recherche marque</a> 
+                            <div class="Divider3"></div> 
+                            <a href="{{ url_for('modèle') }}"  class="lien3"  style="font-size:1.3em; ">Recherche modèle</a> 
+                            <div class="Divider3"></div> 
+                            <a href="{{ url_for('couleur') }}"  class="lien3" id="enCours" style="font-size:1.3em; ">Recherche couleur</a> 
+                            
+                            
+                       </div>
+                     
+                    </div>
+            </div>
+           
+            </div>
+    
+            
+            <h2 class="txt2">Votre formulaire : </h2>
+            
+            <div class="Divider4"></div>                        
+                 
+                 
+                 
+                 
+                 <form action="{{ url_for('couleur') }}"  method="POST" name="formulaire" style="padding:30px;margin:20px" >
+                        
+                            <div style="margin-top:20px">
+                               <label for="Couleur" class="txt0" >Couleur recherchée : </label>
+                               <input type="text" name="Couleur" id="Couleur" style="margin-left:20px" placeholder="Noir">
+                           </div>
+                <div class="Envoi1">
+                    
+                        <button class="button" onclick=""><span>Envoyer les informations </span></button>
+                
+                </div>
+            
+                      
+                </form>
+                 
+                 <h2 class="txt2">Vos voitures : </h2>
+                 
+                 <div class="Divider4"></div>                        
+                          <table style="text-align:center;margin-left:100px;margin-top:20px;width:90%" >
+                            <thead>
+                                 <th>Marque</th>
+                                 <th>Modèle</th>
+                                 <th>Prix</th>
+                                 <th>Année</th>
+                                 <th>Kilométrage</th>
+                                 <th>Couleur</th>
+                                 <th>VIN</th>
+                                    
+                             </thead>
+                             <tbody>
+                                  {% for data in info %}
+                                     <tr>
+                                         <td style="width:10%">{{data[0]}}</td>
+                                         <td style="width:10%">{{data[1]}}</td>
+                                          <td style="width:10%">{{data[2]}}$</td>
+                                          <td style="width:5%">{{data[3]}}</td>
+                                          <td style="width:10%">{{data[4]}}</td>
+                                          <td style="width:10%">{{data[5]}}</td>
+                                          <td style="width:10%">{{data[6]}}</td>
+                                        
+                                    </tr>
+                                    
+                                   {% endfor %}
+                            </tbody>
+                              
+                               
+                              </table>
+         
+              </div>    
+             </div>
+
+           
+
+                
+        </main>
+    	
+    </body>
+    <footer class="footer5">
+            
+		<div class="footerContenu1">
+		<div class="LogoFooter"><p><img src="../static/Images/logoblanc2.png"  alt="Logo1" class="logo1"></p></div>
+        <div class="MailFooter"><h2 class="TextFooter"><br /> 67 Bd de Brandebourg, 94200 Ivry-sur-Seine<br />01 56 20 62 62<br />Nous contacter :<a href="mailto:directeur@teamsprint.fr">Envoyer un mail</a></h2></div>
+
+	</footer>
+</html>		
