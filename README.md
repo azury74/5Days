@@ -36,7 +36,7 @@ $ pip install pandas
 
 ### Start the project (in local) :
 
-In order to start the project, just launch "Interface.py" in the Interface folder. 
+In order to start the project, just launch "app.py" in the Interface folder. 
 
 Then open the following page in your web browser : 
 
