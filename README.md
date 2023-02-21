@@ -1,4 +1,4 @@
-# Machine learning based hotel recommendation system 
+# Car dataset explorer
 
 ## Authors : 
   - Louis LAURENT
