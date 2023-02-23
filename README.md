@@ -25,7 +25,7 @@ Install Flask, with pip :
 ```node
 $ pip install Flask
 ```
-Install Surpise, with pip :
+Install Kaggle, with pip :
 ```node
 $ pip install kaggle
 ```
@@ -49,7 +49,7 @@ Flask :
 
 <https://flask.palletsprojects.com/en/2.1.x/installation/>
 
-Surprise :
+Kaggle :
 
 <https://www.kaggle.com/docs/api>
 
